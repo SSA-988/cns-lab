@@ -1,0 +1,22 @@
+p=input("enter the plaintxt:")
+k=int(input("enter the key:"))
+res=[['0' for i in range(0,len(p))]for j in range(0,k)]
+r=0
+c=0
+temp=1
+for i in p:
+    res[r][c]=i
+    c+=1
+    if(temp==1):
+        r+=1
+        if(r>=k-1):
+            temp=0
+    else:
+        r-=1
+        if(r<=0):
+            temp=1
+
+for i in range(0,k):
+    for j in range(0,len(p)):
+        if(res[i][j]!='0'):
+            print(res[i][j],end="")
